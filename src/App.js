@@ -1,13 +1,16 @@
-import './stylesheets/App.css';
+import React from 'react';
+import ToDo from './components/todo';
+// import './stylesheets/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1> Hello Friends </h1>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  render() {
+    return (
+      <div className="App">
+        <ToDo />
+      </div>
+    );
+  }
 }
 
 export default App;
