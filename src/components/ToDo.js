@@ -9,6 +9,30 @@ class ToDo extends React.Component {
         }
     }
 
+    updateInput(key, value) {
+        //updates reacts state with a key and a value
+        this.setState({ [key]: value })
+    }
+
+    addItem() {
+       // creates a unique id for the new task on the list 
+        const newTask = {
+            id: 1 + Math.random(),
+            value: this.state.newTask.slice()
+        };
+
+        //copy current list of the items (spread operator into an array)
+        const list = [...this.state.list];
+
+        // add the new task to the list 
+        list.push(newTask);
+
+        //updates the list every time the user adds a new item
+        this.setState({ list, newTask: ""})
+
+    }
+
+
     render() {
         return (
             <div>
