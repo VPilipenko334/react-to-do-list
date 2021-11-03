@@ -43,7 +43,8 @@ class ToDo extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="list-container">
+                <center>
                 <h1>Add an Item to your to to list...</h1>
                     <br/>
                     <input type="text"
@@ -66,7 +67,7 @@ class ToDo extends React.Component {
                     )
                 })}
                </ul> 
-
+            </center>
             </div>
         )
     }
