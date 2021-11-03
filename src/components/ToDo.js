@@ -56,7 +56,7 @@ class ToDo extends React.Component {
                 <button onClick={() => this.addItem()}> add
                 </button>  
                 <br/>  
-
+            <div className="inner-list ">
                <ul>
                 {this.state.list.map(item => {
                     return(
@@ -67,6 +67,7 @@ class ToDo extends React.Component {
                     )
                 })}
                </ul> 
+                </div>
             </center>
             </div>
         )
