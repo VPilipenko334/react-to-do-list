@@ -32,6 +32,14 @@ class ToDo extends React.Component {
 
     }
 
+    deleteItem(id) {
+        const list = [...this.state.list];
+
+        const updatedList = list.filter(item => item.id !== id )
+
+        this.setState({ list: updatedList});
+    }
+
 
     render() {
         return (
@@ -41,11 +49,24 @@ class ToDo extends React.Component {
                     <input type="text"
                     placeholder="Type an item here..."
                     value={this.state.newTask}
-                    onChange={e => this.updateInput("newTask, e.target.value")}
+                    onChange={e => this.updateInput("newTask", e.target.value)}
                     />
 
                 <button onClick={() => this.addItem()}> add
-                </button>     
+                </button>  
+                <br/>  
+
+               <ul>
+                {this.state.list.map(item => {
+                    return(
+                        <li key={item.id}>
+                            {item.value}
+                            <button onClick={() => this.deleteItem(item.id)}>X</button>
+                        </li>
+                    )
+                })}
+               </ul> 
+
             </div>
         )
     }
